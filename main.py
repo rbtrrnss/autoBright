@@ -246,6 +246,7 @@ icon.title = f"LuxControl: {startup_brightness}%"
 threading.Thread(target=icon.run, daemon=True).start()
 
 last_icon_brightness = startup_brightness
+last_applied_brightness = startup_brightness
 target_history: deque[int] = deque([startup_brightness] * AVERAGE_HISTORY_SIZE, maxlen=AVERAGE_HISTORY_SIZE)
 
 try:
@@ -260,11 +261,13 @@ try:
         brightness = avg_auto + offset
         brightness = max(0, min(100, brightness))  # clamp to valid range
 
-        for mon in monitors:
-            try:
-                set_brightness_percent(mon.hPhysicalMonitor, brightness)
-            except Exception as exc:
-                print(f"Brightness set failed on monitor '{mon.szPhysicalMonitorDescription}': {exc}")
+        if brightness != last_applied_brightness:
+            for mon in monitors:
+                try:
+                    set_brightness_percent(mon.hPhysicalMonitor, brightness)
+                except Exception as exc:
+                    print(f"Brightness set failed on monitor '{mon.szPhysicalMonitorDescription}': {exc}")
+            last_applied_brightness = brightness
 
         if brightness != last_icon_brightness:
             icon.icon = make_icon_image(brightness)
