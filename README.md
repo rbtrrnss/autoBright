@@ -3,7 +3,15 @@ Mobile devices actively control their display brightness by adjusting to ambient
 For a desktop setting there are (expensive) monitors that have integrated ambient light sensors.  
 Even cheap monitors can be controlled via [DDC](https://en.wikipedia.org/wiki/Display_Data_Channel) from any operating system.  
 
-```Ambient Light  ──▶  [ Light Sensor (1250 lux) ]  ──USB──▶  [ PC / autoBright ]  ──DDC/CI──▶  [ Monitor (72%) ]```  
+```
+ Ambient Light ☀️/🪟/☁️/💡
+        ↓    ↓    ↓
+[ Light Sensor (1250 lux) ]
+        ↓   USB   ↓
+    [ PC / autoBright ]
+        ↓ DDC/CI  ↓
+   [ Monitor (72%) 🖥️ ]
+```  
   
 This project combines a microcontroller based [USB HID ambient light sensor](https://github.com/MatejKocourek/spark-als) with python based DDC control on Windows.  
 
