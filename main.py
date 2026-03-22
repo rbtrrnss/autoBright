@@ -147,10 +147,9 @@ def on_reading_changed(sensor, args):
 
 def lux_to_brightness(lux):
     # simple mapping (adjust to taste)
-    if lux < 10:
-        return 5
+    if lux < 1:
+        return 4
     if lux < 500:
-        #return int(0.0002 * lux**2 + 0.1008 * lux + 0.4014)
         return int(sqrt(lux/500)*100)
     return 100
 

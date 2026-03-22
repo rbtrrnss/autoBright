@@ -10,8 +10,15 @@ The main app in main.py uses:
 - Windows DXVA2 DDC/CI APIs for monitor brightness output
 - a system tray icon with manual offset controls
 
+Further development/integration:
+- add the USB HID light sensor function to [TwinkleTray](https://github.com/xanderfrangos/twinkle-tray) or similar software.
+
 ## Hardware
-Reading ambient brightness is done with an ATTiny85 and a BH1750 brightness sensor. See [MatejKocourek/spark-als](https://github.com/MatejKocourek/spark-als).
+Reading ambient brightness is done with an ATtiny85 and a BH1750 brightness sensor. See [MatejKocourek/spark-als](https://github.com/MatejKocourek/spark-als).  
+  
+![hardware](./hardware.png)  
+  
+The folder ```housing``` includes a 3D printable enclosure.
 
 ## Dependencies
 
@@ -26,12 +33,4 @@ Install required packages:
 ```
 pip install pystray pillow winsdk
 ```
-
-If you use conda environment usbhid:
-
-```
-conda activate usbhid
-python -m pip install pystray pillow winsdk
-```
-
 
