@@ -14,6 +14,7 @@ Even cheap monitors can be controlled via [DDC](https://en.wikipedia.org/wiki/Di
 ```  
   
 This project combines a microcontroller based [USB HID ambient light sensor](https://github.com/MatejKocourek/spark-als) with python based DDC control on Windows.  
+There is also a well documented project with the same approach for Linux: [xythobuz/AutoBrightness](https://github.com/xythobuz/AutoBrightness)
 
 ## Overview
 
