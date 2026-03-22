@@ -35,4 +35,4 @@ pip install pystray pillow winsdk
 ```
 
 ## Autostart on Windows  
-Win+R, ```shell:startup```, create shortcut with ```python3.12.exe "path/to/autoBright.py"```  
+Win+R, ```shell:startup```, create shortcut with ```python3.12.exe "path\to\autoBright\main.py"```  
