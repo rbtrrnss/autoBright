@@ -2,14 +2,14 @@
 Mobile devices actively control their display brightness by adjusting to ambient light levels.  
 For a desktop setting there are (expensive) monitors that have integrated ambient light sensors.  
 Even cheap monitors can be controlled via [DDC](https://en.wikipedia.org/wiki/Display_Data_Channel) from any operating system.  
-This project combines a microscontroller based [USB HID ambient light sensor](https://github.com/MatejKocourek/spark-als) with python based DDC control on Windows.  
+This project combines a microcontroller based [USB HID ambient light sensor](https://github.com/MatejKocourek/spark-als) with python based DDC control on Windows.  
 
 ## Overview
 
 To adjuist the monitor brightness main.py uses:
-- Windows Sensor API (LightSensor) for lux input
-- Windows DXVA2 DDC/CI APIs for monitor brightness output
-- a system tray icon with manual offset controls
+- Windows Sensor API ([LightSensor](https://learn.microsoft.com/en-us/uwp/api/windows.devices.sensors.lightsensor?view=winrt-26100)) for lux input via ```winsdk```
+- Windows DXVA2 DDC/CI APIs for monitor brightness output via ```ctypes```
+- a system tray icon with manual offset controls via ```pystray```
 
 Further development/integration:
 - add the USB HID light sensor function to [TwinkleTray](https://github.com/xanderfrangos/twinkle-tray) or similar software.
