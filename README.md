@@ -34,3 +34,5 @@ Install required packages:
 pip install pystray pillow winsdk
 ```
 
+## Autostart on Windows  
+Win+R, ```shell:startup```, create shortcut with ```python3.12 "path/to/autoBright.py"```  
