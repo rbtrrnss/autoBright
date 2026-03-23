@@ -2,6 +2,8 @@
 Mobile devices actively control their display brightness by adjusting to ambient light levels.  
 For a desktop setting there are (expensive) monitors that have integrated ambient light sensors.  
 Even cheap monitors can be controlled via [DDC](https://en.wikipedia.org/wiki/Display_Data_Channel) from any operating system.  
+  
+This project combines a microcontroller based [USB HID ambient light sensor](https://github.com/MatejKocourek/spark-als) with python based DDC control on Windows.  
 
 ```
  Ambient Light ☀️/🪟/☁️/💡
@@ -13,8 +15,7 @@ Even cheap monitors can be controlled via [DDC](https://en.wikipedia.org/wiki/Di
    [ Monitor (72%) 🖥️ ]
 ```  
   
-This project combines a microcontroller based [USB HID ambient light sensor](https://github.com/MatejKocourek/spark-als) with python based DDC control on Windows.  
-There is also a well documented project with the same approach for Linux: [xythobuz/AutoBrightness](https://github.com/xythobuz/AutoBrightness)
+For Linux there is also a well documented project with the same approach: [xythobuz/AutoBrightness](https://github.com/xythobuz/AutoBrightness)
 
 ## Overview
 
@@ -41,7 +42,7 @@ pip install pystray pillow winsdk
 ```
 
 ## Autostart on Windows  
-Win+R, ```shell:startup```, create shortcut with ```python3.12.exe "path\to\autoBright\main.py"```  
+Win+R, ```shell:startup```, create shortcut with ```python3.12.exe "path\to\autoBright\main.py"``` (if [path variables](https://superuser.com/questions/1399544/how-to-change-default-python-executable-on-windows-10) are set correctly)  
 
 ## Hardware
 Reading ambient brightness is done with an ATtiny85 and a BH1750 brightness sensor. See [MatejKocourek/spark-als](https://github.com/MatejKocourek/spark-als).  
