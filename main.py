@@ -43,6 +43,15 @@ AVERAGE_WINDOW_SEC = 60
 AVERAGE_HISTORY_SIZE = AVERAGE_WINDOW_SEC // LOOP_INTERVAL_SEC
 
 
+def lux_to_brightness(lux):
+    # this needs to be adjusted based on monitor max brightness and user preference
+    if lux < 1:
+        return 3
+    if lux < 600:
+        return int(sqrt(lux / 600) * 100)
+    return 100
+
+
 def _raise_last_error(prefix: str) -> None:
     code = ctypes.get_last_error()
     raise OSError(f"{prefix} failed (WinError {code})")
@@ -144,14 +153,6 @@ def on_reading_changed(sensor, args):
     if reading:
         with lock:
             last_lux = reading.illuminance_in_lux
-
-def lux_to_brightness(lux):
-    # simple mapping (adjust to taste)
-    if lux < 1:
-        return 4
-    if lux < 500:
-        return int(sqrt(lux/500)*100)
-    return 100
 
 
 def make_icon_image(brightness: int) -> Image.Image:
