@@ -45,8 +45,7 @@ pip install pystray pillow winsdk
 Win+R, ```shell:startup```, create shortcut with ```python3.12.exe "path\to\autoBright\main.py"``` (if [path variables](https://superuser.com/questions/1399544/how-to-change-default-python-executable-on-windows-10) are set correctly)  
 
 ## Hardware
-Reading ambient brightness is done with an ATtiny85 and a BH1750 brightness sensor. See [MatejKocourek/spark-als](https://github.com/MatejKocourek/spark-als).  
+Reading ambient brightness is done with an USB-C ATtiny85 and a I2C BH1750 (GY-302/GY-30) brightness sensor. See [MatejKocourek/spark-als](https://github.com/MatejKocourek/spark-als). The folder ```housing``` includes a 3D printable enclosure.  
   
 ![hardware](./hardware.png "USB-C ATtiny85 and noname SPI BH1750 board assabmled back to back with power and SPI CLK/SDL connected by wires")  
   
-The folder ```housing``` includes a 3D printable enclosure.
